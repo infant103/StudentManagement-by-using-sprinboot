@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:"http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+</head>
+<body>
+    <a class="container-fluid">
+        <div>
+          <h1 class="h1" ><center>Update Student</center></h1>
+          <form action="#" th:action="@{/saveStudent}" method="POST" th:object="${student}">
+            <input type="text" th:field="*{id}" placeholder="Enter id"></input>
+              <input type="text" th:field="*{studentCode}" placeholder="Enter Student Code"></input>
+              <input type="text" th:field="*{firstName}" placeholder="Enter First Name"></input>
+              <input type="text" th:field="*{lastName}" placeholder="Enter Last Name"></input>
+              <input type="text" th:field="*{email}" placeholder="Enter email"></input>
+              <input type="text" th:field="*{phone}" placeholder="Enter Phone"></input>
+              <input type="text" th:field="*{userId}" placeholder="Enter User Id"></input>
+
+                      <input type="submit" class="btn btn-primary" id="liveToastBtn"></input>
+          </form>
+        </div>
+      
+</body>
+</html>

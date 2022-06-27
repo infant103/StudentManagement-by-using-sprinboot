@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:"http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CourseDetails</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+  <a th:href="@{/addCourse}" class="btn btn-success"><button type="button" class="btn btn-light">add course</button></a>
+        
+<h1>Course Details</h1>
+<br>
+       <div class="container-fluid">
+       <table border="1" class="table table-striped-columns">
+        <tr>
+            <th>Course Code</th>
+            <th>Course Name</th>
+            <th>Actions</th>   
+        </tr>
+        <tr th:each="course:${courseList}">
+                <td th:text="${course.courseCode}"></td>
+                <td th:text="${course.courseName}"></td>  
+                <td>
+                    <a th:href="@{/showUpdate/{id} (id=${course.id})}" class="btn btn-success">Update</a>
+                    <a th:href="@{/deleteCourse/{id} (id=${course.id})}" class="btn btn-success">Delete</a>
+    
+                </td>
+        </tr>
+
+    </table>
+    </div>
+</body>
+</html>
